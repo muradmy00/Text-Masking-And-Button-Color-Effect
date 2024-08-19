@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    display: flex;
+    min-height:100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e1538;
+    flex-direction: column;
+
+
+}
+
+h2{
+    font-size: 2em;
+    text-transform: uppercase;
+    background: url(img1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+
+}
+.div1{
+    position: relative;
+    margin: 20px 0;
+}
+
+.div1 label{
+    position: absolute;
+    
+    top: 30%;
+    left: 10px;
+    transform: translate(-6%);
+    font-size: 16px;
+    color:dimgrey;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: .2s;
+}
+
+
+.div1 input{
+    width: 320px;
+    height: 60px;
+    font-size: 18px;
+    color: white;
+    padding: 0 10px;
+    background: transparent;
+    border-radius: 5px;
+    border: 1,2px solid #fff;
+    outline: none;
+}
+
+
+.div1 input:focus~label,
+.div1 input:valid~label{
+    top: -0;
+    font-size: 12px;
+    background:#0e1538;
+}
+
+.in{
+    position: absolute;
+    left: 280px;
+    bottom: 210px;
+    
+}
+
+.out{
+    position: absolute;
+    left: 450px;
+    bottom: 210px;
+
+}
+
+a{
+    position: relative;
+    padding: 20px 40px;
+    display: flex;
+    background: rgba(0,0,0,0.5);
+    margin: 40px;
+    width: 111px;
+    height: 57px;
+    align-items: center;
+    transition: 1s;
+    overflow: hidden;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0004);
+    
+
+}
+a:hover{
+    background:var(--clr);
+    box-shadow: 0 0 10px var(--clr),
+    0 0 30px var(--clr),
+    0 0 60px var(--clr),
+    0 0 100px var(--clr);
+}
+
+a::before{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 400%;
+    background: var(--clr);
+    transition: 1s;
+    animation: animate 2s linear infinite;
+    animation-delay: calc(0.33s * var(--i));
+
+}
+
+a:hover::before{
+    width: 100%;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+
+}
+
+a::after{
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background-color: #0e1538;
+}
+
+a:hover::after{
+    background: var(--clr);
+
+}
+
+a span{
+    position: relative;
+    z-index: 1;
+    font-size: 2em;
+    color: #fff;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: 0.5s;
+}
+
+a:hover span{
+    opacity: 1;
+}
+
